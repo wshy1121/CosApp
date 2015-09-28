@@ -4,14 +4,23 @@
 #include "stdafx.h"
 #include "net_server.h"
 #include "net_client.h"
+#include "SimpleIni.h"
+
 
 
 int main(int argc, char* argv[])
 {
+
 	CNetServer::instance()->startServer();
 	sleep(1);
+	
+	CSimpleIniA ini;  
+	ini.SetUnicode();  
+	ini.LoadFile("Config.ini");  
+	const char * netCliIp = ini.GetValue("NetConfig", "NetCliIp", "default");  
+	int netCliPort = (int)ini.GetLongValue("NetConfig", "NetCliPort");
 
-	//trace_start("127.0.0.1", 880110, "Debug11.cpp");
+	trace_start(netCliIp, netCliPort, "C:\\Users\\huangyuan1\\Desktop\\Debug1.cpp");
 	
 	bool bRet = CNetClient::instance()->connect("127.0.0.1");
 	if (bRet)
