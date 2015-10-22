@@ -22,10 +22,10 @@ int main(int argc, char* argv[])
 
 	trace_start(netCliIp, netCliPort, "C:\\Users\\huangyuan1\\Desktop\\Debug1.cpp");
 	
-	bool bRet = CNetClient::instance()->connect("127.0.0.1");
+	bool bRet = CNetClient::instance()->connect((char *)"127.0.0.1");
 	if (bRet)
 	{
-		bRet = CNetClient::instance()->login("admin", "admin");
+		bRet = CNetClient::instance()->login((char *)"admin", (char *)"admin");
 	}
 	else
 	{
