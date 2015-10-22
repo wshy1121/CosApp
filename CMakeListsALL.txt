@@ -1,0 +1,43 @@
+#@note   Hikvision Digital Technology Co., Ltd. All Rights Reserved.
+#@brief  CMake配置文件
+#@author Yaopei
+#@date   2015/7/31
+#@note   the whole CMakeLists.txt for project vehicleProxy
+
+PROJECT(vehicleProxy)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.4)
+
+#set the project version
+SET(vehicleProxy_VERSION 1.0)
+# include directories
+INCLUDE_DIRECTORIES(
+  #/usr/local/include/zookeeper/
+  TraceWorker
+  CosApp
+  CrossPlat
+  NetApp
+  LogCore
+  Encrypt
+)
+
+# lib directories
+LINK_DIRECTORIES(
+# ${PROJECT_BINARY_DIR}/lib
+  ${PROJECT_SOURCE_DIR}/code/lib
+  #${PROJECT_SOURCE_DIR}/code/bin
+)
+
+#SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+#SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/CosApp/build)
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/CosApp/lib)
+
+#SET(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/bin)
+#INSTALL(TARGETS mytest DESTINATION ${PROJECT_SOURCE_DIR}/bin)
+
+ADD_SUBDIRECTORY(CrossPlat)
+ADD_SUBDIRECTORY(Encrypt)
+ADD_SUBDIRECTORY(LogCore)
+ADD_SUBDIRECTORY(NetApp)
+ADD_SUBDIRECTORY(TraceWorker)
+ADD_SUBDIRECTORY(CosApp)
