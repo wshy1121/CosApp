@@ -12,7 +12,6 @@ int main(int argc, char* argv[])
 {
 
 	CNetServer::instance()->startServer();
-	sleep(1);
 	
 	CSimpleIniA ini;  
 	ini.SetUnicode();  
