@@ -1,4 +1,3 @@
-*.a
 *.o
 /logManager
 /build/NetApp
@@ -14,3 +13,9 @@
 /build/LogCore
 /build/Debug.cpp
 /build/C^%@%Users@%huangyuan1@%Desktop@%Debug1.cpp
+/lib/libTraceWorker.a
+/lib/libCrossPlat.a
+/lib/libEncrypt.a
+/lib/libLogCore.a
+/lib/libNetApp.a
+/build/test
