@@ -1,5 +1,6 @@
 #include "SqliteManager.h"
 #include "link_tool.h"
+#include "string_base.h"
 
 using namespace base;
 

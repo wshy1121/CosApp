@@ -22,7 +22,6 @@
 
 #include "string_base.h"
 #include "platform_base.h"
-#include "thread_base.h"
 #include "mem_base.h"
 
 

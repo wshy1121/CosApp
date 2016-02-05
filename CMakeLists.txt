@@ -17,6 +17,11 @@ if(COMMAND cmake_policy)
 	cmake_policy(SET CMP0003 NEW)
 endif(COMMAND cmake_policy)
 
+LINK_DIRECTORIES(
+  ${PROJECT_SOURCE_DIR}/lib
+)
+
+
 SET(SRC_SRCS
   main.cpp
   Sqlite/CppSQLite3.cpp
@@ -32,7 +37,7 @@ SET(SRC_SRCS
 
 ADD_EXECUTABLE(logManager ${SRC_SRCS})
 # link library
-TARGET_LINK_LIBRARIES(logManager NetApp LogCore Encrypt CrossPlat TraceWorker dl pthread)
+TARGET_LINK_LIBRARIES(logManager NetApp LogCore Encrypt CrossPlat TraceWorker json dl pthread)
 
 # clean
 #SET_TARGET_PROPERTIES(BigdataStreamRecv PROPERTIES CLEAN_DIRECT_OUTPUT 1)
