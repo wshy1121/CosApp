@@ -7,7 +7,7 @@
 PROJECT(vehicleProxy)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4)
 
-option(USE_32BITS "Compile for 32bits processors(linux only)" ON)
+option(USE_32BITS "Compile for 32bits processors(linux only)" OFF)
 if(USE_32BITS)
  message(STATUS "using 32bits")
  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m32")
@@ -26,6 +26,7 @@ INCLUDE_DIRECTORIES(
   NetApp
   LogCore
   Encrypt
+  CmdLineInter
 )
 
 # lib directories
@@ -49,3 +50,6 @@ ADD_SUBDIRECTORY(LogCore)
 ADD_SUBDIRECTORY(NetApp)
 ADD_SUBDIRECTORY(TraceWorker)
 ADD_SUBDIRECTORY(CosApp)
+ADD_SUBDIRECTORY(CmdLineInter)
+
+

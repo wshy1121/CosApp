@@ -19,3 +19,5 @@
 /lib/libLogCore.a
 /lib/libNetApp.a
 /build/test
+/build/CmdLineInter
+/lib/libCmdLineInter.a
