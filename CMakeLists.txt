@@ -37,7 +37,7 @@ SET(SRC_SRCS
 
 ADD_EXECUTABLE(logManager ${SRC_SRCS})
 # link library
-TARGET_LINK_LIBRARIES(logManager NetApp LogCore Encrypt CrossPlat TraceWorker json dl pthread)
+TARGET_LINK_LIBRARIES(logManager NetApp LogCore Encrypt CrossPlat TraceWorker CmdLineInter json dl pthread readline ncurses)
 
 # clean
 #SET_TARGET_PROPERTIES(BigdataStreamRecv PROPERTIES CLEAN_DIRECT_OUTPUT 1)
