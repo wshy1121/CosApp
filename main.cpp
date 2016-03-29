@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 	CSimpleIniA ini;  
 	ini.SetUnicode();  
 	ini.LoadFile("Config.ini");  
-	const char * netCliIp = ini.GetValue("NetConfig", "NetCliIp", "default");  
+	const char * netCliIp = ini.GetValue("NetConfig", "NetCliIp", "192.168.0.1");  
 	int netCliPort = (int)ini.GetLongValue("NetConfig", "NetCliPort");
 
 	trace_start(netCliIp, netCliPort, "/root/nfs/Log/LogManagerDebug.cpp");
