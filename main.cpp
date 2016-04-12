@@ -6,12 +6,14 @@
 #include "net_client.h"
 #include "SimpleIni.h"
 #include "CmdLineInter.h"
-
+#include "trace_server.h"
+#include "cli_server.h"
 
 int main(int argc, char* argv[])
 {
 
-	CNetServer::instance()->startServer();
+	CTraceServer::instance()->startServer();
+	CCliServer::instance()->startServer();
 	sleep(1);
 	CSimpleIniA ini;  
 	ini.SetUnicode();  
@@ -20,6 +22,7 @@ int main(int argc, char* argv[])
 	int netCliPort = (int)ini.GetLongValue("NetConfig", "NetCliPort");
 
 	trace_start(netCliIp, netCliPort, "/root/nfs/Log/LogManagerDebug.cpp");
+
 	
 	bool bRet = CNetClient::instance()->connect((char *)"127.0.0.1");
 	if (bRet)
@@ -41,21 +44,11 @@ int main(int argc, char* argv[])
 	CNetClient::instance()->getAccessRep(access, accessLen, accessRep);
 	CNetClient::instance()->verifyAccess(access, accessLen, accessRep);
 
-    char *line, *s;
-    initialize_readline();
-	while (1)
-	{
-        line = readline("\r> ");
-        if (!line || !strcmp(line, "disconnect1234"))
-    	{
-			break;
-		}
-        s = strstrip(line);
-        if (*s) {
-            add_history(s);
-            execute_line(s);
-        }
-	}
-	return 0;
+    while (1)
+    {
+        base::usleep(1000*1000);
+    }
+
+    return 0;
 }
 
