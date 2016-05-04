@@ -20,6 +20,7 @@ SET(vehicleProxy_VERSION 1.0)
 # include directories
 INCLUDE_DIRECTORIES(
   #/usr/local/include/zookeeper/
+  /usr/lib64/
   TraceWorker
   CosApp
   CrossPlat
@@ -27,6 +28,7 @@ INCLUDE_DIRECTORIES(
   LogCore
   Encrypt
   CmdLineInter
+  FileOpr
 )
 
 # lib directories
@@ -51,5 +53,6 @@ ADD_SUBDIRECTORY(NetApp)
 ADD_SUBDIRECTORY(TraceWorker)
 ADD_SUBDIRECTORY(CosApp)
 ADD_SUBDIRECTORY(CmdLineInter)
+ADD_SUBDIRECTORY(FileOpr)
 
 

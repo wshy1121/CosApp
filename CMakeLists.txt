@@ -33,7 +33,8 @@ SET(SRC_SRCS
 
 ADD_EXECUTABLE(logManager ${SRC_SRCS})
 # link library
-TARGET_LINK_LIBRARIES(logManager NetApp LogCore Encrypt CrossPlat TraceWorker CmdLineInter json dl pthread readline ncurses tinfo
+TARGET_LINK_LIBRARIES(logManager NetApp LogCore Encrypt CrossPlat TraceWorker CmdLineInter FileOpr 
+						json dl pthread readline ncurses tinfo
 						boost_atomic boost_atomic boost_atomic boost_regex boost_regex boost_thread boost_system)
 
 # clean
