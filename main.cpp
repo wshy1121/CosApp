@@ -12,17 +12,18 @@
 int main(int argc, char* argv[])
 {
 
-	CTraceServer::instance()->startServer();
-	CCliServer::instance()->startServer();
-	sleep(1);
-	CSimpleIniA ini;  
+	CSimpleIniA ini;
 	ini.SetUnicode();  
 	ini.LoadFile("Config.ini");  
 	const char * netCliIp = ini.GetValue("NetConfig", "NetCliIp", "192.168.0.1");  
 	int netCliPort = (int)ini.GetLongValue("NetConfig", "NetCliPort");
 
-	trace_start(netCliIp, netCliPort, "/root/nfs/Log/LogManagerDebug.cpp");
+	trace_start(netCliIp, netCliPort, "/home/share/Log/LogManagerDebug.cpp");
 
+	CTraceServer::instance()->startServer();
+    CCliTcpServer::instance()->startServer();
+	CCliUdpServer::instance()->startServer();
+	sleep(1);
 	
 	bool bRet = CNetClient::instance()->connect((char *)"127.0.0.1");
 	if (bRet)
