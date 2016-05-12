@@ -29,6 +29,7 @@ INCLUDE_DIRECTORIES(
   Encrypt
   CmdLineInter
   FileOpr
+  Cluster
 )
 
 # lib directories
@@ -54,5 +55,5 @@ ADD_SUBDIRECTORY(TraceWorker)
 ADD_SUBDIRECTORY(CosApp)
 ADD_SUBDIRECTORY(CmdLineInter)
 ADD_SUBDIRECTORY(FileOpr)
-
+ADD_SUBDIRECTORY(Cluster)
 
