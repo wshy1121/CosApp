@@ -26,3 +26,6 @@
 /build/ftpClient
 /build/.nfs00000000020947c30000043e
 /build/nohup.out
+/build/Cluster
+/build/clusterManager
+/lib/libCluster.a
