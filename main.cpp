@@ -23,6 +23,8 @@ int main(int argc, char* argv[])
 	CTraceServer::instance()->startServer();
     CCliTcpServer::instance()->startServer();
 	CCliUdpServer::instance()->startServer();
+    
+    INetServer::dispatch();
 	sleep(1);
 	
 	bool bRet = CNetClient::instance()->connect((char *)"127.0.0.1");

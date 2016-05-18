@@ -21,6 +21,7 @@ SET(vehicleProxy_VERSION 1.0)
 INCLUDE_DIRECTORIES(
   #/usr/local/include/zookeeper/
   /usr/lib64/
+  CosApp/event/include
   TraceWorker
   CosApp
   CrossPlat
@@ -29,7 +30,6 @@ INCLUDE_DIRECTORIES(
   Encrypt
   CmdLineInter
   FileOpr
-  Cluster
 )
 
 # lib directories
